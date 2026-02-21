@@ -1,11 +1,12 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:folder_stuture/core/bootstrap/app_bootstrap_vm.dart';
 import 'package:folder_stuture/core/extensions/extensions.dart';
 import 'package:folder_stuture/core/theme/app_colors.dart';
-import 'package:folder_stuture/core/widgets/custom_elevted_button.dart';
+import 'package:folder_stuture/core/shared/widgets/custom_elevted_button.dart';
 import 'package:provider/provider.dart';
-import '../login_vm.dart';
+import '../providers/login_vm.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -66,6 +67,7 @@ class _LoginFormState extends State<LoginForm> {
                     context,
                     emailController.text.trim(),
                     passwordController.text.trim(),
+                    onLoggedIn: () => context.read<AppBootstrapVM>().reset(),
                   );
 
                   if (vm.user != null) {

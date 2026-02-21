@@ -36,11 +36,11 @@ class AppConfig {
   static String get baseUrl {
     switch (environment) {
       case Environment.dev:
-        return "dev_url";
+        return "https://dev.maxfit.cooleats.cool/api/v1";
       case Environment.staging:
-        return "stagging_url";
+        return "https://staging.maxfit.cooleats.cool/api/v1";
       case Environment.prod:
-        return "prod_url";
+        return "https://maxfit.cooleats.cool/api/v1";
     }
   }
 
@@ -76,7 +76,7 @@ class AppConfig {
   // ============================================================
   // EXTERNAL LINKS
   // ============================================================
-  static const String privacyPolicyUrl = "#";
-  static const String termsUrl = "#";
-  static const String supportEmail = "#";
+  static const String privacyPolicyUrl = "https://maxfit.cooleats.cool/privacy";
+  static const String termsUrl = "https://maxfit.cooleats.cool/terms";
+  static const String supportEmail = "support@cooleats.cool";
 }

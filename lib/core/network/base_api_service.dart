@@ -1,4 +1,15 @@
+import 'package:dio/dio.dart';
+
 abstract class BaseApiService {
-  Future<T> get<T>(String url, {Map<String, String>? headers});
-  Future<T> post<T>(String url, {Map<String, String>? headers, dynamic body});
+  Future<dynamic> get(String url, {Map<String, String>? headers});
+  Future<dynamic> post(
+    String url, {
+    Map<String, String>? headers,
+    dynamic body,
+  });
+  Future<dynamic> postMultipart(
+    String url, {
+    Map<String, String>? headers,
+    required FormData formData,
+  });
 }

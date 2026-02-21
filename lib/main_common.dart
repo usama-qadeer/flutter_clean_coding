@@ -1,3 +1,5 @@
+import 'package:folder_stuture/core/bootstrap/app_bootstrap_vm.dart';
+import 'package:folder_stuture/core/permissions/permission_vm.dart';
 import 'package:folder_stuture/main_exports.dart';
 
 Future<void> runMainApp() async {
@@ -43,15 +45,23 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => ThemeVM()),
-
         ChangeNotifierProvider(create: (_) => AuthState()..init()),
 
         ChangeNotifierProvider(create: (_) => LoginVM(loginUseCase)),
         ChangeNotifierProvider(create: (_) => BranchesVM(getBranchesUseCase)),
+        ChangeNotifierProvider(create: (_) => PermissionVM()),
+
+        // ✅ Bootstrap depends on BranchesVM (+ add more VMs later)
+        ChangeNotifierProxyProvider2<PermissionVM, BranchesVM, AppBootstrapVM>(
+          create: (context) =>
+              AppBootstrapVM(branchesVM: context.read<BranchesVM>()),
+          update: (context, perm, branches, old) =>
+              old ?? AppBootstrapVM(branchesVM: branches),
+        ),
       ],
-      child: Consumer2<ThemeVM, AuthState>(
-        builder: (context, themeVM, auth, _) {
-          final GoRouter router = createRouter(auth);
+      child: Consumer3<ThemeVM, AuthState, AppBootstrapVM>(
+        builder: (context, themeVM, auth, bootstrap, _) {
+          final GoRouter router = createRouter(auth, bootstrap);
 
           return ScreenUtilInit(
             designSize: const Size(375, 812),

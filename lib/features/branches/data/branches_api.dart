@@ -4,10 +4,7 @@ class BranchesApi {
   final BaseApiService apiService;
   BranchesApi(this.apiService);
 
-  Future<Map<String, dynamic>> fetchBranches() async {
-    final response = await apiService.get<Map<String, dynamic>>(
-      '/get-branches',
-    );
-    return response;
+  Future<dynamic> fetchBranchesJson() {
+    return apiService.get('/get-branches');
   }
 }

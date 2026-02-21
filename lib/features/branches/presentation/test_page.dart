@@ -1,60 +1,53 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:folder_stuture/core/extensions/extensions.dart';
-import 'package:folder_stuture/core/theme/app_button_style.dart';
-import 'package:folder_stuture/core/theme/theme_vm.dart';
-import 'package:folder_stuture/core/widgets/custom_elevted_button.dart';
-import 'package:folder_stuture/core/widgets/custom_outline_button.dart';
-import 'package:folder_stuture/core/widgets/input.dart';
-import 'package:folder_stuture/core/widgets/progress_button.dart';
-import 'package:provider/provider.dart';
+// Future<dynamic> updateProfile({
+//   required String name,
+//   required String email,
+//   File? image,
+// }) async {
+//   final formData = await MultipartHelper.build(
+//     fields: {
+//       'name': name,
+//       'email': email,
+//     },
+//     singleFile: image,
+//     singleFileKey: 'image', // backend key
+//   );
 
-class TestPage extends StatelessWidget {
-  const TestPage({super.key});
+//   return api.postMultipart(
+//     '/update-profile',
+//     formData: formData,
+//   );
+// }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        actions: [
-          IconButton(
-            onPressed: () {
-              final theme = context.read<ThemeVM>();
-              if (theme.mode == ThemeMode.dark) {
-                theme.setMode(ThemeMode.light);
-              } else {
-                theme.setMode(ThemeMode.dark);
-              }
-            },
-            icon: const Icon(Icons.refresh),
-          ),
-        ],
-      ),
-      body: Column(
-        children: [
-          SizedBox(height: 10.h),
+// Future<dynamic> uploadBlog({
+//   required String title,
+//   required String content,
+//   required List<File> images,
+// }) async {
+//   final formData = await MultipartHelper.build(
+//     fields: {
+//       'title': title,
+//       'content': content,
+//     },
+//     files: images,
+//     filesKey: 'images[]', // backend expects array
+//   );
 
-          AppInput(
-            hintText: "Test ",
-            labelText: "qwertyu",
-            suffix: Icon(Icons.search),
-            prefix: Icon(Icons.person),
-            helperText: "password should be contain words ",
-          ),
-          CustomOutlinedButton(
-            text: "Test",
-            onPressed: () {},
+//   return api.postMultipart(
+//     '/create-blog',
+//     formData: formData,
+//   );
+// }
 
-            leftIcon: CustomProgressButton(),
-          ),
 
-          CustomElevatedButton(
-            text: "fjgkfjgkf",
-            isCircle: false,
-            buttonStyle: AppButtonStyles.danger(context),
-          ),
-        ],
-      ).px16,
-    );
-  }
-}
+// final formData = await MultipartHelper.build(
+//   fields: {
+//     'title': title,
+//     'description': desc,
+//     'category_id': categoryId,
+//   },
+//   singleFile: thumbnail,
+//   singleFileKey: 'thumbnail',
+//   files: galleryImages,
+//   filesKey: 'gallery[]',
+// );
+

@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:folder_stuture/core/constants/app_config.dart';
-import 'package:folder_stuture/features/auth/data/auth_state.dart';
-import 'package:provider/provider.dart';
+import 'package:folder_stuture/core/shared/dialogs/app_dialogs.dart';
+import 'package:folder_stuture/core/shared/widgets/custom_image_view.dart';
+import 'package:folder_stuture/main_exports.dart';
 
-import '../../../core/response/status.dart';
-import 'branches_vm.dart';
+import '../../../core/shared/state/status.dart';
 
 class BranchesScreen extends StatelessWidget {
   const BranchesScreen({super.key});
@@ -16,19 +14,32 @@ class BranchesScreen extends StatelessWidget {
         final response = vm.branchesResponse;
 
         return Scaffold(
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {
+              AppDialogs.status(
+                context: context,
+                title: "Success!",
+                message: "Your action was completed\nsuccessfully. Great job!",
+                buttonText: "Go Home",
+                onButtonPressed: () {
+                  Navigator.pop(context);
+                },
+              );
+            },
+          ),
           appBar: AppBar(
             title: const Text("Branches"),
             actions: [
               IconButton(
                 onPressed: () {
-                  // final theme = context.read<ThemeVM>();
-                  // if (theme.mode == ThemeMode.dark) {
-                  //   theme.setMode(ThemeMode.light);
-                  // } else {
-                  //   theme.setMode(ThemeMode.dark);
-                  // }
+                  final theme = context.read<ThemeVM>();
+                  if (theme.mode == ThemeMode.dark) {
+                    theme.setMode(ThemeMode.light);
+                  } else {
+                    theme.setMode(ThemeMode.dark);
+                  }
 
-                  context.read<AuthState>().logout();
+                  // context.read<AuthState>().logout();
                 },
                 icon: const Icon(Icons.refresh),
               ),
@@ -61,10 +72,11 @@ class BranchesScreen extends StatelessWidget {
                         title: Text(branch.name),
                         subtitle: Text(branch.email),
                         leading: branch.image != null
-                            ? Image.network(
-                                "${AppConfig.baseUrl}${branch.image!}",
-                                width: 40,
-                                height: 40,
+                            ? CustomImageView(
+                                height: 40.h,
+                                width: 40.w,
+                                imagePath:
+                                    "${AppConfig.baseUrl}${branch.image!}",
                               )
                             : const Icon(Icons.store),
                       );

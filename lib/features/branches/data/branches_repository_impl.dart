@@ -9,19 +9,26 @@ class BranchesRepositoryImpl implements BranchesRepository {
 
   @override
   Future<List<BranchModel>> getBranches() async {
-    final response = await api.fetchBranches();
+    final res = await api.fetchBranchesJson();
 
-    final success = response['success'] == true;
+    if (res is! Map<String, dynamic>) {
+      throw const ServerException("Invalid response: expected object");
+    }
+
+    final success = res['success'] == true;
     if (!success) {
-      final msg = response['message']?.toString() ?? "Unknown error";
+      final msg = res['message']?.toString() ?? "Unknown error";
       throw ServerException(msg);
     }
 
-    final data = response['data'];
+    final data = res['data'];
     if (data is! List) {
       throw const ServerException("Invalid response format");
     }
 
-    return data.map((e) => BranchModel.fromJson(e)).toList();
+    return data
+        .whereType<Map<String, dynamic>>()
+        .map((e) => BranchModel.fromJson(e))
+        .toList();
   }
 }
