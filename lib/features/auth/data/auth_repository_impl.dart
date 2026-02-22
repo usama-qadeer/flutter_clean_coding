@@ -7,7 +7,12 @@ class AuthRepositoryImpl implements AuthRepository {
   AuthRepositoryImpl(this.api);
 
   @override
-  Future<AuthModel> login(String email, String password) {
-    return api.login(email, password);
+  Future<AuthModel> login(String email, String password) async {
+    final json = await api.loginJson(email, password);
+    final data = json['data'];
+    if (data is! Map<String, dynamic>) {
+      throw Exception('Invalid response: data missing');
+    }
+    return AuthModel.fromJson(data);
   }
 }
