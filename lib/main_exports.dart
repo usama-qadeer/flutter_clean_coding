@@ -5,7 +5,7 @@ export 'package:folder_stuture/core/constants/app_config.dart';
 export 'package:folder_stuture/core/theme/app_theme.dart';
 export 'package:folder_stuture/core/theme/theme_vm.dart';
 export 'package:folder_stuture/core/storage/local_storage.dart';
-export 'package:folder_stuture/routes/routes.dart';
+export 'package:folder_stuture/core/routes/routes.dart';
 // ROUTER
 export 'package:go_router/go_router.dart';
 export 'package:provider/provider.dart';

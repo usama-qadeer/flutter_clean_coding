@@ -1,5 +1,5 @@
 import 'package:folder_stuture/core/bootstrap/app_bootstrap_vm.dart';
-import 'package:folder_stuture/routes/routes_export.dart';
+import 'package:folder_stuture/core/routes/routes_export.dart';
 
 GoRouter createRouter(AuthState auth, AppBootstrapVM bootstrap) {
   bool isAuthRequired(String loc) =>

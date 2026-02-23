@@ -1,4 +1,4 @@
-import 'package:folder_stuture/routes/routes_export.dart';
+import 'package:folder_stuture/core/routes/routes_export.dart';
 
 class RouteGuard {
   static bool isProtected(String? route) {
