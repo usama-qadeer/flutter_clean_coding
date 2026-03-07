@@ -1,5 +1,5 @@
-import 'package:folder_stuture/core/bootstrap/app_bootstrap_vm.dart';
-import 'package:folder_stuture/core/permissions/permission_vm.dart';
+import 'package:folder_stuture/src/core/bootstrap/app_bootstrap_vm.dart';
+import 'package:folder_stuture/src/core/permissions/permission_vm.dart';
 import 'package:folder_stuture/main_exports.dart';
 
 Future<void> runMainApp() async {

@@ -1,5 +1,5 @@
-import 'package:folder_stuture/core/shared/dialogs/app_dialogs.dart';
-import 'package:folder_stuture/core/shared/widgets/custom_image_view.dart';
+import 'package:folder_stuture/src/core/shared/dialogs/app_dialogs.dart';
+import 'package:folder_stuture/src/core/shared/widgets/custom_image_view.dart';
 import 'package:folder_stuture/main_exports.dart';
 
 import '../../../core/shared/state/status.dart';

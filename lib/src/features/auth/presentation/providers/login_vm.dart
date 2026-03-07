@@ -3,7 +3,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:folder_stuture/features/auth/presentation/providers/auth_state.dart';
+import 'package:folder_stuture/src/features/auth/presentation/providers/auth_state.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../core/error/app_exception.dart';

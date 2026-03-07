@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:folder_stuture/core/extensions/extensions.dart';
-import 'package:folder_stuture/core/theme/theme_vm.dart';
+import 'package:folder_stuture/src/core/extensions/extensions.dart';
+import 'package:folder_stuture/src/core/theme/theme_vm.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/login_form.dart';

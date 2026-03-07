@@ -1,9 +1,9 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:folder_stuture/features/auth/presentation/providers/auth_state.dart';
+import 'package:folder_stuture/src/features/auth/presentation/providers/auth_state.dart';
 import 'package:provider/provider.dart';
-import 'package:folder_stuture/core/bootstrap/app_bootstrap_vm.dart';
+import 'package:folder_stuture/src/core/bootstrap/app_bootstrap_vm.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

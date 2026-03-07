@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:folder_stuture/core/storage/local_storage.dart';
+import 'package:folder_stuture/src/core/storage/local_storage.dart';
 
 enum AuthStatus { checking, authenticated, unauthenticated }
 

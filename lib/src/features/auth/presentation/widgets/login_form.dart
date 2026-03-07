@@ -1,10 +1,10 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:folder_stuture/core/bootstrap/app_bootstrap_vm.dart';
-import 'package:folder_stuture/core/extensions/extensions.dart';
-import 'package:folder_stuture/core/theme/app_colors.dart';
-import 'package:folder_stuture/core/shared/widgets/custom_elevted_button.dart';
+import 'package:folder_stuture/src/core/bootstrap/app_bootstrap_vm.dart';
+import 'package:folder_stuture/src/core/extensions/extensions.dart';
+import 'package:folder_stuture/src/core/theme/app_colors.dart';
+import 'package:folder_stuture/src/core/shared/widgets/custom_elevted_button.dart';
 import 'package:provider/provider.dart';
 import '../providers/login_vm.dart';
 

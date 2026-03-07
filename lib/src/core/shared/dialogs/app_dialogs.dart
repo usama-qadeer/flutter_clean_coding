@@ -1,7 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
-import 'package:folder_stuture/core/extensions/extensions.dart';
-import 'package:folder_stuture/core/shared/widgets/custom_elevted_button.dart';
+import 'package:folder_stuture/src/core/extensions/extensions.dart';
+import 'package:folder_stuture/src/core/shared/widgets/custom_elevted_button.dart';
 import 'package:folder_stuture/main_exports.dart';
 
 class AppDialogs {

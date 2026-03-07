@@ -1,5 +1,5 @@
-import 'package:folder_stuture/core/shared/state/api_responses.dart';
-import 'package:folder_stuture/core/shared/state/status.dart';
+import 'package:folder_stuture/src/core/shared/state/api_responses.dart';
+import 'package:folder_stuture/src/core/shared/state/status.dart';
 
 extension ApiResponcesX<T> on ApiResponses<T> {
   bool get isIdle => status == Status.IDLE;

@@ -1,5 +1,5 @@
 export 'package:flutter/material.dart';
-export 'package:folder_stuture/features/auth/presentation/providers/auth_state.dart';
+export 'package:folder_stuture/src/features/auth/presentation/providers/auth_state.dart';
 export 'package:go_router/go_router.dart';
 
 export '../../features/auth/presentation/pages/login_screen.dart';

@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
-import 'package:folder_stuture/core/shared/state/api_response_helpers.dart';
-import 'package:folder_stuture/features/branches/presentation/branches_vm.dart';
+import 'package:folder_stuture/src/core/shared/state/api_response_helpers.dart';
+import 'package:folder_stuture/src/features/branches/presentation/branches_vm.dart';
 
 // ✅ Add your other VMs here
-// import 'package:folder_stuture/features/profile/presentation/profile_vm.dart';
-// import 'package:folder_stuture/features/permissions/presentation/permissions_vm.dart';
-// import 'package:folder_stuture/features/settings/presentation/settings_vm.dart';
+// import 'package:folder_stuture/src/features/profile/presentation/profile_vm.dart';
+// import 'package:folder_stuture/src/features/permissions/presentation/permissions_vm.dart';
+// import 'package:folder_stuture/src/features/settings/presentation/settings_vm.dart';
 
 class AppBootstrapVM extends ChangeNotifier {
   final BranchesVM branchesVM;
